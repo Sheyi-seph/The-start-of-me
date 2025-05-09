@@ -1,0 +1,19 @@
+#!/bin/bash
+
+if [ ! -d ~/backupss ]; then
+	mkdir ~/backupss
+fi
+
+if [ $# -eq 0 ]; then
+	echo "error; no file specified"
+	echo "usage: $0 filename"
+	exit 1
+fi
+
+if [ ! -f "$1" ]; then
+	echo "file "$1" not found"
+	exit 1
+fi
+
+cp "$1" ~/backupss
+echo "file $1 copied successfully to ~/backupss"
