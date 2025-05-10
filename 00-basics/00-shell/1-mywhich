@@ -1,0 +1,10 @@
+#!/bin/bash
+
+for tool in "$@"; do
+	path=$(command -v "tool")
+	if [ -x "$path" ]; then
+		echo "$tool -> $path"
+	else
+		echo "$tool not found or kutable"
+	fi
+done
