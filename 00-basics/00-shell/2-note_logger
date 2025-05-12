@@ -1,0 +1,10 @@
+#!/bin/bash
+
+echo "Enter a note to log(end with newline)"
+read
+if [ ! -f ~/NOTES/$(date +F)-note.txt ]; then
+	touch ~/NOTES/$(date +%F)-note.txt
+	echo $REPLY > ~/NOTES/$(date +%F)-note.txt
+else
+	echo $REPLY >> ~/NOTES/$(date +%F)-note.txt
+fi
