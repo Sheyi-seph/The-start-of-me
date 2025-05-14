@@ -1,0 +1,11 @@
+#!/bin/bash
+
+if [ -f "$1" ]; then
+	echo -e "This is a file\n"
+	ls -ld $1
+elif [ -d "$1" ]; then
+	echo -e "This is a directory\n"
+	ls -ld "$1"
+else
+	echo -e "file not found\n"
+fi
