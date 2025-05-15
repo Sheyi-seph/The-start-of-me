@@ -1,0 +1,5 @@
+#!/bin/bash
+
+echo -e "enter a file and keyword to search for"
+read
+grep -n $2 $1
