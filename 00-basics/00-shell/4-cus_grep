@@ -1,5 +1,16 @@
 #!/bin/bash
 
-echo -e "enter a file and keyword to search for"
-read
-grep -n $2 $1
+if [ $# -ne 2 ]; then
+    echo "Usage: $0 <search_word> <filename>"
+    exit 1
+fi
+
+word="$1"
+file="$2"
+
+if [ ! -f "$file" ]; then
+    echo "Error: File '$file' not found."
+    exit 1
+fi
+
+grep -n "$word" "$file"
